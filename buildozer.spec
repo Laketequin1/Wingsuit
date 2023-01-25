@@ -190,7 +190,7 @@ fullscreen = 1
 
 # (int) Android SDK version to use
 
-#android.sdk = 20
+#android.sdk = /home/tequin/Desktop/platform-tools
 
 
 

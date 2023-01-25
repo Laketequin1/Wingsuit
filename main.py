@@ -1,12 +1,11 @@
 # -------- Setup
-import pygame, pyautogui, sys, random, pygame.font
+import pygame, sys, random, pygame.font, os, subprocess
 pygame.init()
 
 # ------- Constant variables
-MIDDLE_WIDTH = 80
-
+INFO = pygame.display.Info()
 GAME_WIDTH, GAME_HEIGHT = 1280, 720
-SCREEN_WIDTH, SCREEN_HEIGHT = pyautogui.size()
+SCREEN_WIDTH, SCREEN_HEIGHT = INFO.current_w, INFO.current_h
 #SCREEN_WIDTH, SCREEN_HEIGHT = (960, 40)
 FPS = 80
 
@@ -28,8 +27,8 @@ class Color:
 
 # Sprites
 class Sprite:
-    player = pygame.image.load("images/Player.png")
-    rock = pygame.image.load("images/Rock.png")
+    player = pygame.image.load(os.path.join(os.getcwd(), 'images', 'Player.png'))
+    rock = pygame.image.load(os.path.join(os.getcwd(), 'images', 'Rock.png'))
 
 # -------- Variables
 display = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.FULLSCREEN)
